@@ -33,9 +33,6 @@ function renderWeather(weather){
         resultsContainer.append(description)
     }
 
-
-    details.append("")
-
 }
 
 function fetchWeather(query) {
@@ -51,21 +48,6 @@ function fetchWeather(query) {
 
 fetchWeather("san diego")
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
