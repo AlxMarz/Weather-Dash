@@ -4,9 +4,11 @@ var geoCall = "https://api.openweathermap.org/geo/1.0/direct?q="
 var searchField = document.getElementById("search-field")
 var apiExclude = "&exclude=minutely,hourly,alerts"
 var apiCall = "https://api.openweathermap.org/data/2.5/onecall?"
+var citySearch = document.getElementById("searchCity")
 
 
 function renderWeather(weather){
+    
     console.log(weather);
     var resultsContainer = document.querySelector("#weather-results")
     // create h2 for name
@@ -46,7 +48,7 @@ function fetchWeather(query) {
         .then((data) => renderWeather(data))
 }
 
-fetchWeather("san diego")
+fetchWeather("london")
     
 
 
