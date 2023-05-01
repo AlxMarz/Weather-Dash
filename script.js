@@ -1,10 +1,22 @@
-var APIKey = "&appid=7eb5330d2f0977e81f7f2aaf26f016e6"
+var APIKey = "7eb5330d2f0977e81f7f2aaf26f016e6"
 var fetchButton = document.getElementById("fetch-button")
 var geoCall = "https://api.openweathermap.org/geo/1.0/direct?q="
 var searchField = document.getElementById("search-field")
 var apiExclude = "&exclude=minutely,hourly,alerts"
 var apiCall = "https://api.openweathermap.org/data/2.5/onecall?"
 var citySearch = document.getElementById("searchCity")
+
+
+
+
+
+// Dom load
+
+$(document).ready(function () {
+
+})
+
+
 
 
 function renderWeather(weather){
@@ -48,7 +60,48 @@ function fetchWeather(query) {
         .then((data) => renderWeather(data))
 }
 
-fetchWeather("london")
+
+function fetchForecast(query) {
+    // var url = 
+    // "https://api.openweathermap.org/data/2.5/weather?q=" +
+    // query + 
+    // "&units=imperial&appid=7eb5330d2f0977e81f7f2aaf26f016e6"
+
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + query +    
+     "&units=imperial&appid=" + APIKey
+
+
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+}
+
+// fetchWeather("london")
+
+$('#fetch-button').click(function (event){
+
+    event.preventDefault()
+    event.stopPropagation()
+
+    // Put city into varaible
+    var searchCity = $('#search-field').val().trim()
+    console.log($(this).text())
+
+    // fetch city
+
+    fetchWeather(searchCity)
+
+    fetchForecast(searchCity)
+
+
+    // console.log(searchCity)
+
+})
+
+
+//5 day
+
+
     
 
 
