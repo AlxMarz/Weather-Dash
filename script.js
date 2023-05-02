@@ -18,9 +18,9 @@ $(document).ready(function () {
 
 
 
-
+//daily weather 
 function renderWeather(weather){
-    
+    //daily
     console.log(weather);
     var resultsContainer = document.querySelector("#weather-results")
     // create h2 for name
@@ -47,7 +47,10 @@ function renderWeather(weather){
         resultsContainer.append(description)
     }
 
+
 }
+
+
 
 function fetchWeather(query) {
     var url = 
@@ -58,6 +61,7 @@ function fetchWeather(query) {
     fetch(url)
         .then((response) => response.json())
         .then((data) => renderWeather(data))
+        
 }
 
 
@@ -66,6 +70,7 @@ function fetchForecast(query) {
     // "https://api.openweathermap.org/data/2.5/weather?q=" +
     // query + 
     // "&units=imperial&appid=7eb5330d2f0977e81f7f2aaf26f016e6"
+    
 
     var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + query +    
      "&units=imperial&appid=" + APIKey
@@ -73,7 +78,10 @@ function fetchForecast(query) {
 
     fetch(url)
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        //forecast
+        .then((data) => console.log(data))  
+
+
 }
 
 // fetchWeather("london")
@@ -97,6 +105,8 @@ $('#fetch-button').click(function (event){
     // console.log(searchCity)
 
 })
+
+
 
 
 //5 day
