@@ -79,7 +79,44 @@ function fetchForecast(query) {
     fetch(url)
         .then((response) => response.json())
         //forecast
-        .then((data) => console.log(data))  
+        .then(function (response) {
+            console.log(response)
+
+            var header = $("<h4>").attr("class", "card-header p-2 mt-4 shadow").text("5-Day Forecast:")
+
+            $("#five").prepend(header)
+
+                // Five day forecast
+
+            $.each(response.list, function (i, day) {
+
+
+                var time = moment(day.dt_txt).hour()
+
+                console.log(i, day.dt_txt, time)
+                if (time == 15) {
+                    var card = $("<div>").attr("class", "card text-white bg-primary m-2 shadow")
+
+                    var date = $("<div>").text(moment(day.dt_txt).format("ddd, Do")).attr("class", "card-header")
+                    var body = $("<div>").attr("class", "card-body")
+                    var img = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + day.weather[0].icon + "@2x.png")
+                    // c.append(img)
+                    var temp = $("<div>").text("Temp: " + day.main.temp + " F").attr("class", "card-text ")
+                    var hum = $("<div>").text("Humidity: " + day.main.humidity + "%").attr("class", "card-text ")
+
+                    body.append(img, temp, hum)
+                    card.append(date, body)
+                    $("#foreCast").append(card)
+
+
+                }
+
+
+            })
+
+
+
+        })
 
 
 }
@@ -105,6 +142,10 @@ $('#fetch-button').click(function (event){
     // console.log(searchCity)
 
 })
+
+
+
+
 
 
 
