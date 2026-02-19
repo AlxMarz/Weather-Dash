@@ -1,0 +1,16 @@
+#weather-results{
+    background-color: beige;;
+    display: flex;
+    flex-direction:column;
+    box-shadow: 1px black;
+    align-items: center;
+}
+
+#five{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    box-shadow: 1px black;
+    margin-top: 10px;
+}

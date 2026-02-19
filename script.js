@@ -54,10 +54,6 @@ function fetchWeather(query) {
 }
 
 function fetchForecast(query) {
-  // var url =
-  // "https://api.openweathermap.org/data/2.5/weather?q=" +
-  // query +
-  // "&units=imperial&appid=7eb5330d2f0977e81f7f2aaf26f016e6"
 
   var url =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -146,61 +142,3 @@ $("#fetch-button").click(function (event) {
   clearResults();
 });
 
-//5 day
-
-// //gets lat lon from city user typed in
-// function getLatLon(query){
-//     //gets city from text intput
-//     var city = searchField.val().trim()
-//     fetch(geoCall+city+apiExclude+APIKey)
-//         .then(function(response){
-//             return response.json()
-//         })
-//         .then (function(data){
-//             var cityLat = "lat="+data[0].lat
-//             var cityLon = "&lon"+data[0].lon
-//             //takes city lat and lon then sends it get forecast
-//             getCityData(cityLat, cityLon, city)
-//             console.log(data);
-//         })
-// }
-
-// //uses city lat and lon to get the forecast
-// function getCityData(cityLat,cityLon,city){
-//     fetch(apiCall+cityLat+cityLon+"&units=imperial"+apiExclude+APIKey)
-//     .then(function(data){
-//         var cityData = data
-//         showWeather(cityData, city, city)
-//         console.log(data);
-//     })
-// }
-
-// fetchButton.addEventListener('click', getLatLon)
-
-// function getApi(){
-//     var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=kansascity&limit=5&appid=7eb5330d2f0977e81f7f2aaf26f016e6"
-//     fetch(requestUrl)
-//         .then(function (response){
-//             return response.json()
-//         })
-//         .then (function (data){
-//             console.log(data);
-//         })
-// }
-
-// //event listener form the button of search
-// $('city').click(function (event){
-//     event.preventDefault()
-//     event.stopPropagation()
-
-//     var city = ('#city').val.trim
-
-// })
-
-// //get weather
-// function getWeather (city){
-//     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
-
-//     var lat, lon
-
-//
