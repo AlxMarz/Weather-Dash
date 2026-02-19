@@ -75,6 +75,7 @@ function fetchForecast(query) {
         .attr("class", "card-header p-2 mt-4")
         .text("5-Day Forecast:");
 
+        // five day forecast header
       $("#five").prepend(header);
 
       // Five day forecast
@@ -136,8 +137,11 @@ $("#fetch-button").click(function (event) {
     // Source - https://stackoverflow.com/a/6798187
     // Posted by alex, modified by community. See post 'Timeline' for change history
     // Retrieved 2026-02-18, License - CC BY-SA 3.0
-    var forecastContainer = document.querySelector('#five')
+    var forecastContainer = document.querySelector('#foreCast');
     forecastContainer.innerHTML = ""
+
+    var headerContainer = document.querySelector('#five');
+    headerContainer.innerHTML = ""
   }
   clearResults();
 });
