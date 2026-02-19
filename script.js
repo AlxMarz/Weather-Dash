@@ -72,7 +72,7 @@ function fetchForecast(query) {
       console.log(response);
 
       var header = $("<h4>")
-        .attr("class", "card-header p-2 mt-4 shadow")
+        .attr("class", "card-header p-2 mt-4")
         .text("5-Day Forecast:");
 
       $("#five").prepend(header);
@@ -86,7 +86,7 @@ function fetchForecast(query) {
         if (time == 15) {
           var card = $("<div>").attr(
             "class",
-            "card text-white text-center bg-primary m-2 shadow",
+            "card text-white text-center bg-primary m-2 ",
           );
 
           var date = $("<div>")
