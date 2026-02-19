@@ -1,3 +1,7 @@
+#jumbo{
+    background-color:grey;
+}
+
 #weather-results{
     background-color: grey;;
     display: flex;
