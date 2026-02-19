@@ -95,7 +95,7 @@ function fetchForecast(query) {
 
                 console.log(i, day.dt_txt, time)
                 if (time == 15) {
-                    var card = $("<div>").attr("class", "card text-white bg-primary m-2 shadow")
+                    var card = $("<div>").attr("class", "card text-white text-center bg-primary m-2 shadow")
 
                     var date = $("<div>").text(moment(day.dt_txt).format("ddd, Do")).attr("class", "card-header")
                     var body = $("<div>").attr("class", "card-body")
