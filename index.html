@@ -16,18 +16,23 @@
     <nav class="navbar bg-dark ">
         <span class="navbar-brand text-white p-3">Weather dashboard by Alex</span>
     </nav>
-<!-- searchbar -->
+    <!-- searchbar -->
     <div class="container-fluid p-5 jumbotron bg-secondary text-center">
-        <h1 class="text-white">Weather Dashboard</h1>
-        <form>
-            <div class="form-group">
-                <input id="search-field" class="form-control" placeholder="search">
-                <small id="searchCity" class="form-text text-muted text-white">Search for a city!</small>
-                <button id="fetch-button" class="btn btn-primary btn-lg">GO!</button>
 
-            </div>
-        </form>
+        <div class="container py-5">
+            <h1 class="text-body-emphasis">Weather Dashboard</h1>
+            <form>
+                <div class="form-group">
+                    <input id="search-field" class="form-control" placeholder="search">
+                    <small id="searchCity" class="form-text text-muted text-white">Search for a city!</small>
+                    <button id="fetch-button" class="btn btn-primary btn-lg">GO!</button>
+
+                </div>
+            </form>
+        </div>
+
     </div>
+
 
     <!-- single day forecast and five day forecast -->
     <div class="container-fluid p-3 mb-5 text-white">
@@ -35,8 +40,8 @@
             <div class="col m-2">
                 <div id="weather-results"></div>
             </div>
-            
-<!-- fiveday forecast -->
+
+            <!-- fiveday forecast -->
             <div class="col p-2 mb-5">
                 <div id="dashBoard" class=""></div>
                 <div id="five" class="text-white text-center"></div>
