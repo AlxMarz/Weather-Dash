@@ -1,16 +1,20 @@
 #weather-results{
-    background-color: beige;;
+    background-color: grey;;
     display: flex;
     flex-direction:column;
     box-shadow: 1px black;
     align-items: center;
 }
 
+#foreCast{
+    background-color:grey;
+}
+
 #five{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: grey;
     box-shadow: 1px black;
     margin-top: 10px;
 }
