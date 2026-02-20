@@ -16,6 +16,10 @@ function renderWeather(weather) {
   console.log(weather);
   // space
   var resultsContainer = document.querySelector("#weather-results");
+  var resultsContainer = document.createElement("div");
+  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2");
+  document.querySelector("#weather-results").append(resultsContainer);
+  //
   // create h2 for name
   var city = document.createElement("h2");
   city.textContent = weather.name;
