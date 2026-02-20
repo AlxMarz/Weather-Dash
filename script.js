@@ -16,6 +16,16 @@ function renderWeather(weather) {
   console.log(weather);
   // space
   var resultsContainer = document.querySelector("#weather-results");
+
+
+  var headerDaily = document.createElement("h4");
+  headerDaily.setAttribute("class", "p-2 mt-4 text-center");
+  headerDaily.textContent = "Current Weather";
+  document.querySelector("#weather-results").append(headerDaily);
+
+  
+  
+
   var resultsContainer = document.createElement("div");
   resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2");
   document.querySelector("#weather-results").append(resultsContainer);
