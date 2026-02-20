@@ -22,12 +22,10 @@ function renderWeather(weather) {
   headerDaily.setAttribute("class", "p-2 mt-4 text-center");
   headerDaily.textContent = "Current Weather";
   document.querySelector("#weather-results").append(headerDaily);
-
-  
   
 
   var resultsContainer = document.createElement("div");
-  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2");
+  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2 max-w-50 mx-auto");
   document.querySelector("#weather-results").append(resultsContainer);
   //
   // create h2 for name
@@ -47,6 +45,11 @@ function renderWeather(weather) {
   wind.textContent =
     "wind: " + weather.wind.speed + " mph, " + weather.wind.deg + "°";
   resultsContainer.append(wind);
+
+  var img= document.createElement("img")
+  img.setAttribute("src", "http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png");
+  resultsContainer.append(img);
+          
 
   var weatherDetails = weather.weather[0];
   if (weatherDetails && weatherDetails.description) {
