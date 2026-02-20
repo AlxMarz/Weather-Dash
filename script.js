@@ -17,15 +17,16 @@ function renderWeather(weather) {
   // space
   var resultsContainer = document.querySelector("#weather-results");
 
-
   var headerDaily = document.createElement("h2");
   headerDaily.setAttribute("class", "p-2 text-center");
   headerDaily.textContent = "Current Weather";
   document.querySelector("#weather-results").append(headerDaily);
-  
 
   var resultsContainer = document.createElement("div");
-  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2 mx-auto");
+  resultsContainer.setAttribute(
+    "class",
+    "card bg-primary text-white text-center p-2 mx-auto",
+  );
   document.querySelector("#weather-results").append(resultsContainer);
   //
   // create h2 for name
@@ -46,10 +47,12 @@ function renderWeather(weather) {
     "wind: " + weather.wind.speed + " mph, " + weather.wind.deg + "°";
   resultsContainer.append(wind);
 
-  var img= document.createElement("img")
-  img.setAttribute("src", "http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png");
+  var img = document.createElement("img");
+  img.setAttribute(
+    "src",
+    "http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png",
+  );
   resultsContainer.append(img);
-          
 
   var weatherDetails = weather.weather[0];
   if (weatherDetails && weatherDetails.description) {
@@ -71,7 +74,6 @@ function fetchWeather(query) {
 }
 
 function fetchForecast(query) {
-
   var url =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     query +
@@ -88,7 +90,7 @@ function fetchForecast(query) {
         .attr("class", "card-header p-2 mt-4")
         .text("5-Day Forecast:");
 
-        // five day forecast header
+      // five day forecast header
       $("#five").prepend(header);
 
       // Five day forecast
@@ -129,6 +131,8 @@ function fetchForecast(query) {
     });
 }
 
+
+
 $("#fetch-button").click(function (event) {
   event.preventDefault();
   event.stopPropagation();
@@ -143,6 +147,15 @@ $("#fetch-button").click(function (event) {
 
   fetchForecast(searchCity);
 
+  //
+function changeBG(weatherDetails) {
+  if (weatherDetails && weatherDetails.description) {;
+    if (weatherDetails.description.includes("clear sky")) {
+      document.body.style.backgroundColor = "#a11f1f"; // light gray for cloudy weather
+    }
+  }
+}
+changeBG();
   // console.log(searchCity)
   function clearResults() {
     var resultsContainer = document.querySelector("#weather-results");
@@ -150,12 +163,11 @@ $("#fetch-button").click(function (event) {
     // Source - https://stackoverflow.com/a/6798187
     // Posted by alex, modified by community. See post 'Timeline' for change history
     // Retrieved 2026-02-18, License - CC BY-SA 3.0
-    var forecastContainer = document.querySelector('#foreCast');
-    forecastContainer.innerHTML = ""
+    var forecastContainer = document.querySelector("#foreCast");
+    forecastContainer.innerHTML = "";
 
-    var headerContainer = document.querySelector('#five');
-    headerContainer.innerHTML = ""
+    var headerContainer = document.querySelector("#five");
+    headerContainer.innerHTML = "";
   }
   clearResults();
 });
-
