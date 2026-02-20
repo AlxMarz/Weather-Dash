@@ -18,14 +18,14 @@ function renderWeather(weather) {
   var resultsContainer = document.querySelector("#weather-results");
 
 
-  var headerDaily = document.createElement("h4");
-  headerDaily.setAttribute("class", "p-2 mt-4 text-center");
+  var headerDaily = document.createElement("h2");
+  headerDaily.setAttribute("class", "p-2 text-center");
   headerDaily.textContent = "Current Weather";
   document.querySelector("#weather-results").append(headerDaily);
   
 
   var resultsContainer = document.createElement("div");
-  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2 max-w-50 mx-auto");
+  resultsContainer.setAttribute("class", "card bg-primary text-white text-center p-2 mx-auto");
   document.querySelector("#weather-results").append(resultsContainer);
   //
   // create h2 for name
