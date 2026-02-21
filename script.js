@@ -131,8 +131,6 @@ function fetchForecast(query) {
     });
 }
 
-
-
 $("#fetch-button").click(function (event) {
   event.preventDefault();
   event.stopPropagation();
@@ -147,15 +145,6 @@ $("#fetch-button").click(function (event) {
 
   fetchForecast(searchCity);
 
-  //
-function changeBG(weatherDetails) {
-  if (weatherDetails && weatherDetails.description) {;
-    if (weatherDetails.description.includes("clear sky")) {
-      document.body.style.backgroundColor = "#a11f1f"; // light gray for cloudy weather
-    }
-  }
-}
-changeBG();
   // console.log(searchCity)
   function clearResults() {
     var resultsContainer = document.querySelector("#weather-results");
@@ -171,3 +160,17 @@ changeBG();
   }
   clearResults();
 });
+
+
+  
+  // function changeBG(weather) {
+  //   var weatherDetails = weather.weather[0];
+
+  //   console.log(weatherDetails.description);
+
+  //   if (weatherDetails.description.includes("clear sky")) {
+  //     document.body.style.background = "rgba(176, 15, 179, 0.07)";
+  //   }
+  // }
+
+  // changeBG(weather);
